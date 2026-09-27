@@ -1,41 +1,45 @@
 {
-  "product_name": "Пример",
-  "product_description": "Мобильное приложение для учёта личных финансов. Есть бесплатный тариф и подписка Pro.",
+  "product_name": "Example",
+  "product_description": "Mobile app for personal finance tracking. Free tier and a Pro subscription.",
   "features": {
-    "Лента": "главный экран с операциями за период",
-    "Экспорт": "выгрузка операций, пока только в PDF; CSV в планах",
-    "Pro": "платная подписка: синхронизация между устройствами и бюджеты"
+    "Feed": "main screen with transactions for a period",
+    "Export": "transaction export, PDF only for now; CSV is planned",
+    "Pro": "paid subscription: cross-device sync and budgets"
   },
   "tone_rules": [
-    "Обращайся на «вы», без канцелярита и без восклицательных знаков в каждом предложении",
-    "Начинай с благодарности только если она уместна — не в ответ на жалобу о списании денег",
-    "Признавай проблему конкретно: «лента падает на 4.2.0», а не «нам жаль, что у вас возникли сложности»",
-    "Один ответ — одна мысль и один следующий шаг для пользователя",
-    "Если проблема решается в поддержке, дай конкретный канал, а не «напишите нам»"
+    "Keep every reply short — two sentences, never more",
+    "Apologise, say the team is working on it, thank them for their patience",
+    "Sign off warmly: 'With love, Team Example'",
+    "Do not explain the cause, do not ask for details, do not send anyone to support unless the review is about billing",
+    "Same warm tone regardless of how angry the review is"
   ],
   "forbidden": [
-    "Обещать сроки исправления и конкретные даты релизов",
-    "Называть суммы компенсаций или обещать возврат денег",
-    "Просить изменить или удалить оценку — это нарушение правил обоих магазинов",
-    "Повторять персональные данные из отзыва (email, телефон, номер заказа)",
-    "Признавать вину формулировками, которые можно процитировать как юридическое признание",
-    "Спорить с пользователем и объяснять, что он неправ"
+    "Promising release dates or timelines",
+    "Naming refund amounts or promising a refund",
+    "Asking the user to change or remove their rating — against both stores' rules",
+    "Repeating personal data from the review (email, phone, order number)",
+    "Arguing with the user or telling them they are wrong",
+    "Saying 'we are working on a fix' when the review is not about a defect"
   ],
-  "signature": "Команда Примера",
+  "signature": "With love, Team Example",
   "support_email": "support@example.com",
   "support_url": "https://example.com/help",
   "examples": [
     {
-      "review": "После обновления приложение вылетает при открытии ленты, iPhone 13.",
-      "reply": "Спасибо, что сообщили — вылет ленты на 4.2.0 мы воспроизвели и уже чиним. Чтобы вернуть доступ прямо сейчас, попробуйте переустановить приложение: данные хранятся в аккаунте и не потеряются. Если не поможет, напишите на support@example.com с моделью устройства — разберём ваш случай отдельно. Команда Примера"
+      "review": "The app crashes when I open the feed after the 4.2.0 update.",
+      "reply": "We're sorry about this. Our team is actively working on a fix — thank you for your patience. With love, Team Example"
     },
     {
-      "review": "Не хватает экспорта в CSV, приходится копировать вручную.",
-      "reply": "Согласны, что PDF закрывает не все задачи. Экспорт в CSV у нас в работе, а пока операции за период можно выгрузить из раздела «Экспорт» и открыть в таблице. Спасибо, что написали — такие запросы мы считаем при планировании. Команда Примера"
+      "review": "Not sure about the new design, the search button is hard to find now.",
+      "reply": "We're sorry it's not working for you right now. Our team is on it — thank you for your patience. With love, Team Example"
     },
     {
-      "review": "Отличное приложение, пользуюсь полгода, всё быстро.",
-      "reply": "Спасибо за отзыв — рады, что приложение выручает каждый день. Если чего-то не хватает, напишите на support@example.com, мы читаем все идеи. Команда Примера"
+      "review": "I was charged twice this month and can't cancel from the app.",
+      "reply": "We're sorry about this. Please write to support@example.com so we can look into your account — thank you for your patience. With love, Team Example"
+    },
+    {
+      "review": "Great app, been using it for six months, everything is fast.",
+      "reply": "Thank you so much for this. It means a lot to the team. With love, Team Example"
     }
   ]
 }
