@@ -9,7 +9,7 @@
   "tone_rules": [
     "Keep every reply short — two sentences, never more",
     "Apologise, say the team is working on it, thank them for their patience",
-    "Sign off warmly: 'With love, Team Example'",
+    "Sign off as a person, not a company: 'With love, John, Customer Service'",
     "Do not explain the cause, do not ask for details, do not send anyone to support unless the review is about billing",
     "Same warm tone regardless of how angry the review is"
   ],
@@ -21,25 +21,25 @@
     "Arguing with the user or telling them they are wrong",
     "Saying 'we are working on a fix' when the review is not about a defect"
   ],
-  "signature": "With love, Team Example",
+  "signature": "With love, John, Customer Service",
   "support_email": "support@example.com",
   "support_url": "https://example.com/help",
   "examples": [
     {
       "review": "The app crashes when I open the feed after the 4.2.0 update.",
-      "reply": "We're sorry about this. Our team is actively working on a fix — thank you for your patience. With love, Team Example"
+      "reply": "We're sorry about this. Our team is actively working on a fix — thank you for your patience. With love, John, Customer Service"
     },
     {
       "review": "Not sure about the new design, the search button is hard to find now.",
-      "reply": "We're sorry it's not working for you right now. Our team is on it — thank you for your patience. With love, Team Example"
+      "reply": "We're sorry it's not working for you right now. Our team is on it — thank you for your patience. With love, John, Customer Service"
     },
     {
       "review": "I was charged twice this month and can't cancel from the app.",
-      "reply": "We're sorry about this. Please write to support@example.com so we can look into your account — thank you for your patience. With love, Team Example"
+      "reply": "We're sorry about this. Please write to support@example.com so we can look into your account — thank you for your patience. With love, John, Customer Service"
     },
     {
       "review": "Great app, been using it for six months, everything is fast.",
-      "reply": "Thank you so much for this. It means a lot to the team. With love, Team Example"
+      "reply": "Thank you so much for this. It means a lot to the team. With love, John, Customer Service"
     }
   ]
 }
