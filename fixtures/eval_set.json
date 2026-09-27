@@ -1,0 +1,737 @@
+{
+  "description": "Размеченный вручную набор для проверки качества классификации. severity_range — допустимый диапазон, точное совпадение слишком хрупко. topics_any_of — достаточно одного попадания. risk_flags — точное совпадение множества: ложное срабатывание здесь так же плохо, как пропуск.",
+  "cases": [
+    {
+      "review_id": "as-1001",
+      "sentiment": "positive",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "praise"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1002",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "crash"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1003",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "billing",
+        "subscription_cancel"
+      ],
+      "requests_refund": true,
+      "contains_pii": true,
+      "language": "en",
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1004",
+      "sentiment": "neutral",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "missing_feature"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1005",
+      "sentiment": "negative",
+      "severity_range": [
+        5,
+        5
+      ],
+      "topics_any_of": [
+        "privacy"
+      ],
+      "risk_flags": [
+        "legal_threat"
+      ]
+    },
+    {
+      "review_id": "as-1006",
+      "sentiment": "negative",
+      "severity_range": [
+        1,
+        3
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "risk_flags": [],
+      "note": "пустое тело — ответить нечего"
+    },
+    {
+      "review_id": "as-1007",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        5
+      ],
+      "topics_any_of": [
+        "billing"
+      ],
+      "is_actionable_bug": false,
+      "requests_refund": true,
+      "risk_flags": [],
+      "note": "нет деталей — бага не воспроизвести"
+    },
+    {
+      "review_id": "as-1008",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "performance"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1009",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "account_login"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1010",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "sync"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1011",
+      "sentiment": "positive",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "missing_feature",
+        "praise"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1012",
+      "sentiment": "negative",
+      "severity_range": [
+        5,
+        5
+      ],
+      "topics_any_of": [
+        "privacy"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": [
+        "security_report"
+      ]
+    },
+    {
+      "review_id": "as-1013",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "ads"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1014",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "crash",
+        "other"
+      ],
+      "mentions_competitor": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1015",
+      "sentiment": "neutral",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "onboarding"
+      ],
+      "language": "en",
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1016",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "billing"
+      ],
+      "requests_refund": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1017",
+      "sentiment": "negative",
+      "severity_range": [
+        1,
+        3
+      ],
+      "topics_any_of": [
+        "ui"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1018",
+      "sentiment": "neutral",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "risk_flags": [],
+      "note": "спам: отвечать не нужно, модератор отклоняет"
+    },
+    {
+      "review_id": "as-1019",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "sync",
+        "ui"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1020",
+      "sentiment": "negative",
+      "severity_range": [
+        5,
+        5
+      ],
+      "topics_any_of": [
+        "billing",
+        "subscription_cancel"
+      ],
+      "risk_flags": [
+        "legal_threat",
+        "app_review_violation_claim"
+      ]
+    },
+    {
+      "review_id": "as-1021",
+      "sentiment": "positive",
+      "severity_range": [
+        1,
+        1
+      ],
+      "topics_any_of": [
+        "praise"
+      ],
+      "risk_flags": [],
+      "note": "только эмодзи"
+    },
+    {
+      "review_id": "as-1022",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "sync",
+        "support"
+      ],
+      "risk_flags": [],
+      "note": "смешанный язык — проверка выбора языка ответа"
+    },
+    {
+      "review_id": "as-1023",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "crash"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1024",
+      "sentiment": "negative",
+      "severity_range": [
+        5,
+        5
+      ],
+      "topics_any_of": [
+        "sync"
+      ],
+      "risk_flags": [
+        "self_harm"
+      ],
+      "note": "ни в каком виде не отвечать автоматически"
+    },
+    {
+      "review_id": "as-1025",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1026",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "support",
+        "onboarding"
+      ],
+      "is_actionable_bug": false,
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1027",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "risk_flags": [
+        "media_attention"
+      ]
+    },
+    {
+      "review_id": "as-1028",
+      "sentiment": "neutral",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "performance",
+        "praise"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1029",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "sync"
+      ],
+      "is_actionable_bug": true,
+      "language": "en",
+      "risk_flags": []
+    },
+    {
+      "review_id": "as-1030",
+      "sentiment": "positive",
+      "severity_range": [
+        1,
+        1
+      ],
+      "topics_any_of": [
+        "praise"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2001",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "crash"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2002",
+      "sentiment": "positive",
+      "severity_range": [
+        1,
+        1
+      ],
+      "topics_any_of": [
+        "praise"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2003",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "ui",
+        "performance"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2004",
+      "sentiment": "neutral",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "onboarding"
+      ],
+      "language": "en",
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2005",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "crash"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2006",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "crash"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2007",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "billing"
+      ],
+      "requests_refund": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2008",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "ads"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2009",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "account_login"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2010",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "sync"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2011",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "privacy"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2012",
+      "sentiment": "negative",
+      "severity_range": [
+        5,
+        5
+      ],
+      "topics_any_of": [
+        "billing"
+      ],
+      "requests_refund": true,
+      "contains_pii": true,
+      "risk_flags": [
+        "legal_threat"
+      ]
+    },
+    {
+      "review_id": "gp-2013",
+      "sentiment": "neutral",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "missing_feature"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2014",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2015",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "support"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2016",
+      "sentiment": "negative",
+      "severity_range": [
+        2,
+        3
+      ],
+      "topics_any_of": [
+        "performance"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2017",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "crash"
+      ],
+      "is_actionable_bug": true,
+      "language": "es",
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2018",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "crash",
+        "ads"
+      ],
+      "language": "de",
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2019",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "billing",
+        "subscription_cancel"
+      ],
+      "language": "tr",
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2020",
+      "sentiment": "negative",
+      "severity_range": [
+        4,
+        5
+      ],
+      "topics_any_of": [
+        "crash",
+        "sync"
+      ],
+      "language": "pt",
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2021",
+      "sentiment": "negative",
+      "severity_range": [
+        1,
+        3
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "is_actionable_bug": false,
+      "risk_flags": [],
+      "note": "односложный отзыв — деталей нет"
+    },
+    {
+      "review_id": "gp-2022",
+      "sentiment": "neutral",
+      "severity_range": [
+        1,
+        2
+      ],
+      "topics_any_of": [
+        "other"
+      ],
+      "risk_flags": [],
+      "note": "спам"
+    },
+    {
+      "review_id": "gp-2023",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "ui",
+        "missing_feature"
+      ],
+      "risk_flags": []
+    },
+    {
+      "review_id": "gp-2024",
+      "sentiment": "negative",
+      "severity_range": [
+        3,
+        4
+      ],
+      "topics_any_of": [
+        "sync",
+        "other"
+      ],
+      "is_actionable_bug": true,
+      "risk_flags": [],
+      "note": "длинный текст против лимита 350 символов на ответ"
+    },
+    {
+      "review_id": "gp-2025",
+      "sentiment": "positive",
+      "severity_range": [
+        1,
+        1
+      ],
+      "topics_any_of": [
+        "praise"
+      ],
+      "risk_flags": []
+    }
+  ]
+}

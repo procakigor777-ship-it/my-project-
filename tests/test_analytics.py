@@ -55,3 +55,12 @@ def test_reject_reasons_are_collected(session, clients, llm, brand):
 
     reasons = analytics.reject_reasons(session)
     assert reasons == [("слишком формально", 1)]
+
+
+def test_cluster_alert_ignores_other_topic(session, clients, llm, brand):
+    """«other» — мусорная корзина классификатора, кластер по ней бессмысленен."""
+    _prepare(session, clients, llm, brand)
+    titles = [a.title for a in alerts.check_topic_version_cluster(session, threshold=1)]
+
+    assert any("crash" in t for t in titles)
+    assert not any("other" in t for t in titles)

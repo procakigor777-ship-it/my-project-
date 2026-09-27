@@ -5,10 +5,10 @@
     "title": "Отличное приложение",
     "body": "Пользуюсь полгода, всё работает быстро. Спасибо за тёмную тему!",
     "author": "Ирина К.",
-    "territory": "RUS",
     "locale": "ru",
+    "territory": "RUS",
     "app_version": "4.2.0",
-    "created_at": "2026-09-24T10:12:00+00:00"
+    "created_at": "-74h"
   },
   {
     "id": "as-1002",
@@ -16,10 +16,11 @@
     "title": "Постоянно вылетает",
     "body": "После обновления до 4.2.0 приложение крашится при открытии ленты. iPhone 13, iOS 18. Деньги за подписку списали, а пользоваться невозможно.",
     "author": "Dmitry",
-    "territory": "RUS",
     "locale": "ru",
+    "territory": "RUS",
     "app_version": "4.2.0",
-    "created_at": "2026-09-25T08:45:00+00:00"
+    "created_at": "-4h",
+    "device": "iPhone 13"
   },
   {
     "id": "as-1003",
@@ -27,10 +28,10 @@
     "title": "Can't cancel subscription",
     "body": "I have been charged twice this month and there is no way to cancel from the app. Support has not answered my email for 5 days. My email is user@example.com, please fix this.",
     "author": "Mark T.",
-    "territory": "USA",
     "locale": "en",
+    "territory": "USA",
     "app_version": "4.1.8",
-    "created_at": "2026-09-25T19:03:00+00:00"
+    "created_at": "-41h"
   },
   {
     "id": "as-1004",
@@ -38,10 +39,10 @@
     "title": "Хорошо, но не хватает экспорта",
     "body": "В целом нравится, но очень нужен экспорт в CSV. Без него приходится копировать вручную.",
     "author": "Сергей",
-    "territory": "RUS",
     "locale": "ru",
+    "territory": "RUS",
     "app_version": "4.2.0",
-    "created_at": "2026-09-26T07:20:00+00:00"
+    "created_at": "-29h"
   },
   {
     "id": "as-1005",
@@ -49,9 +50,289 @@
     "title": "Обман и утечка данных",
     "body": "Приложение сливает мои контакты третьим лицам, я обратился к юристу и буду подавать в суд. Требую удалить мой аккаунт немедленно.",
     "author": "Аноним",
-    "territory": "RUS",
     "locale": "ru",
+    "territory": "RUS",
     "app_version": "4.2.0",
-    "created_at": "2026-09-26T12:00:00+00:00"
+    "created_at": "-9h"
+  },
+  {
+    "id": "as-1006",
+    "rating": 1,
+    "title": "Ужас",
+    "body": "",
+    "author": "noname",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-22h"
+  },
+  {
+    "id": "as-1007",
+    "rating": 1,
+    "title": "Верните деньги",
+    "body": "Не работает вообще ничего!!! Верните деньги немедленно!!!",
+    "author": "Зол",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-7h"
+  },
+  {
+    "id": "as-1008",
+    "rating": 3,
+    "title": "Жрёт батарею",
+    "body": "Приложение висит в фоне и съедает 30% заряда за день. Раньше такого не было, началось на 4.2.0.",
+    "author": "Павел",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-18h",
+    "device": "iPhone 12"
+  },
+  {
+    "id": "as-1009",
+    "rating": 2,
+    "title": "Не могу войти",
+    "body": "После обновления выкидывает из аккаунта, вход по Apple ID не проходит, крутится бесконечная загрузка.",
+    "author": "Katya",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-4h"
+  },
+  {
+    "id": "as-1010",
+    "rating": 1,
+    "title": "Потерял все записи",
+    "body": "Синхронизация между iPhone и iPad затёрла данные за три месяца. Ничего не восстановить, бэкапа нет. Это катастрофа.",
+    "author": "Виктор",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-15h",
+    "device": "iPad Air"
+  },
+  {
+    "id": "as-1011",
+    "rating": 5,
+    "title": "Люблю, но добавьте виджет",
+    "body": "Лучшее в своём классе. Очень прошу виджет на экран блокировки.",
+    "author": "Настя",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-49h"
+  },
+  {
+    "id": "as-1012",
+    "rating": 1,
+    "title": "Дыра в безопасности",
+    "body": "Ваш API отдаёт данные чужих аккаунтов, если подменить id в запросе. Проверил на своём и на тестовом аккаунте — видно чужие операции. Почините срочно.",
+    "author": "researcher",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-7h"
+  },
+  {
+    "id": "as-1013",
+    "rating": 2,
+    "title": "Реклама на каждом шагу",
+    "body": "Бесплатная версия превратилась в рекламный щит: баннер, видео между экранами, ещё и попап при запуске.",
+    "author": "Игорь",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-68h"
+  },
+  {
+    "id": "as-1014",
+    "rating": 1,
+    "title": "Ушёл к конкуренту",
+    "body": "Удалил. У MoneyKeeper то же самое работает без вылетов и дешевле. Не тратьте время.",
+    "author": "Ex-user",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-51h"
+  },
+  {
+    "id": "as-1015",
+    "rating": 4,
+    "title": "Confusing setup",
+    "body": "Good app once it works, but connecting my bank took me 15 minutes of guessing. The onboarding needs clearer steps.",
+    "author": "Priya",
+    "locale": "en",
+    "territory": "GBR",
+    "app_version": "4.2.0",
+    "created_at": "-47h"
+  },
+  {
+    "id": "as-1016",
+    "rating": 1,
+    "title": "Списали дважды",
+    "body": "За сентябрь списали подписку два раза, 899 рублей вместо одного платежа. В чеках Apple обе транзакции. Верните лишнее.",
+    "author": "Мария",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-4h"
+  },
+  {
+    "id": "as-1017",
+    "rating": 3,
+    "title": "Зачем сломали дизайн",
+    "body": "Новый интерфейс неудобный: поиск спрятали в меню, кнопка добавления уехала вниз. Верните старый вариант.",
+    "author": "Олег",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-26h"
+  },
+  {
+    "id": "as-1018",
+    "rating": 5,
+    "title": "Заработок",
+    "body": "Хочешь зарабатывать от 50000 в неделю? Пиши в телеграм @easy_money_now, научу с нуля!",
+    "author": "spam_bot",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-33h"
+  },
+  {
+    "id": "as-1019",
+    "rating": 2,
+    "title": "Подробный баг-репорт",
+    "body": "Воспроизводится стабильно: 1) открываю ленту за сентябрь, 2) тяну вниз для обновления, 3) быстро переключаюсь на вкладку бюджетов, 4) возвращаюсь — список пустой, счётчик показывает 0 операций. Помогает только перезапуск. iPhone 14 Pro, iOS 18.1, версия 4.2.0. На 4.1.8 такого не было, проверял на втором устройстве — там та же картина. Готов снять видео, если нужно.",
+    "author": "Андрей Т.",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-3h",
+    "device": "iPhone 14 Pro"
+  },
+  {
+    "id": "as-1020",
+    "rating": 1,
+    "title": "Напишу в Роспотребнадзор",
+    "body": "Подписку оформили без моего согласия, отменить невозможно. Пишу жалобу в Роспотребнадзор и в Apple о нарушении правил магазина.",
+    "author": "Т.Н.",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-6h"
+  },
+  {
+    "id": "as-1021",
+    "rating": 5,
+    "title": "🔥🔥🔥",
+    "body": "🔥🔥🔥",
+    "author": "fan",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-40h"
+  },
+  {
+    "id": "as-1022",
+    "rating": 2,
+    "title": "Not sure",
+    "body": "Приложение ок, but синхронизация fails постоянно, и support не отвечает already неделю.",
+    "author": "Bilingual",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-21h"
+  },
+  {
+    "id": "as-1023",
+    "rating": 1,
+    "title": "На iPad не запускается",
+    "body": "На iPhone работает, на iPad белый экран после сплэша. iPad Pro 2022, iPadOS 18.",
+    "author": "Ольга",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-8h",
+    "device": "iPad Pro"
+  },
+  {
+    "id": "as-1024",
+    "rating": 1,
+    "title": "Потерял все накопления",
+    "body": "Из-за вашего сбоя я потерял все свои накопления, которые вёл три года. Мне очень плохо, я не знаю, как теперь жить дальше.",
+    "author": "Без имени",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-5h"
+  },
+  {
+    "id": "as-1025",
+    "rating": 3,
+    "title": "Старая версия",
+    "body": "На 4.1.8 не открываются вложения. Обновиться не могу, старый телефон.",
+    "author": "Нина",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.1.8",
+    "created_at": "-76h",
+    "device": "iPhone 8"
+  },
+  {
+    "id": "as-1026",
+    "rating": 2,
+    "title": "Не разобрался",
+    "body": "Не понимаю, куда пропали мои операции. Наверное, я что-то нажал не туда, но найти не могу.",
+    "author": "Пользователь",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-43h"
+  },
+  {
+    "id": "as-1027",
+    "rating": 1,
+    "title": "Расскажу всем",
+    "body": "Это худшее приложение для финансов. Напишу подробный разбор на Хабр и отправлю в профильные СМИ, чтобы люди знали, как вы обращаетесь с деньгами пользователей.",
+    "author": "Журналист",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-11h"
+  },
+  {
+    "id": "as-1028",
+    "rating": 4,
+    "title": "Почти идеально",
+    "body": "Нравится всё, кроме скорости открытия отчётов — секунды три думает. В остальном спасибо.",
+    "author": "Роман",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-96h"
+  },
+  {
+    "id": "as-1029",
+    "rating": 1,
+    "title": "Deleted my data",
+    "body": "The app wiped six months of records after the update. No backup, no export, nothing. This is unacceptable for a paid app.",
+    "author": "J. Alvarez",
+    "locale": "en",
+    "territory": "USA",
+    "app_version": "4.2.0",
+    "created_at": "-9h"
+  },
+  {
+    "id": "as-1030",
+    "rating": 5,
+    "title": "Спасибо команде",
+    "body": "Полтора года каждый день. Виден труд: мелочи доведены, поддержка отвечает по делу, обновления не ломают привычки. Редкость.",
+    "author": "Елена М.",
+    "locale": "ru",
+    "territory": "RUS",
+    "app_version": "4.2.0",
+    "created_at": "-118h"
   }
 ]

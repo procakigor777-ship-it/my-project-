@@ -23,6 +23,10 @@ MIN_SAMPLE = 5
 #: Во сколько раз доля негатива за сутки должна превысить месячную базу.
 NEGATIVE_SPIKE_FACTOR = 1.8
 
+#: «other» — мусорная корзина классификатора: кластер по ней ничего не
+#: значит и только приучает игнорировать алерты.
+CLUSTER_IGNORED_TOPICS = {"other"}
+
 #: Google Play отдаёт только последние ~7 дней. Предупреждаем сильно заранее.
 PLAY_STALE_WARN_HOURS = 24
 PLAY_STALE_CRITICAL_HOURS = 96
@@ -82,6 +86,7 @@ def check_topic_version_cluster(session: Session, hours: int = 24, threshold: in
             Review.created_at >= cutoff,
             Review.app_version.is_not(None),
             Review.rating <= 3,
+            ReviewTopic.topic.not_in(CLUSTER_IGNORED_TOPICS),
         )
         .group_by(ReviewTopic.topic, Review.app_version)
         .having(func.count(Review.id) >= threshold)

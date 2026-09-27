@@ -8,7 +8,8 @@
 from __future__ import annotations
 
 import json
-from datetime import datetime, timezone
+import re
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from app.models import Store
@@ -17,6 +18,23 @@ from app.stores.limits import REPLY_CHAR_LIMITS
 
 FIXTURES_DIR = Path("fixtures")
 RUNTIME_DIR = Path(".runtime")
+
+
+#: Даты в фикстурах можно задавать относительно текущего момента:
+#: "-3h", "-2d". Иначе демо-данные устаревают и правила алертов,
+#: которые смотрят на последние сутки, перестают срабатывать.
+RELATIVE_RE = re.compile(r"^-(\d+)([hd])$")
+
+
+def parse_created(value: str) -> datetime:
+    match = RELATIVE_RE.match(value.strip())
+    if match:
+        amount, unit = int(match.group(1)), match.group(2)
+        delta = timedelta(hours=amount) if unit == "h" else timedelta(days=amount)
+        return datetime.now(timezone.utc) - delta
+
+    created = datetime.fromisoformat(value)
+    return created if created.tzinfo else created.replace(tzinfo=timezone.utc)
 
 
 class MockStoreClient(StoreClient):
@@ -38,9 +56,7 @@ class MockStoreClient(StoreClient):
         items = json.loads(self._fixtures.read_text(encoding="utf-8"))
         out = []
         for item in items:
-            created = datetime.fromisoformat(item["created_at"])
-            if created.tzinfo is None:
-                created = created.replace(tzinfo=timezone.utc)
+            created = parse_created(item["created_at"])
             if since and created <= since:
                 continue
             out.append(

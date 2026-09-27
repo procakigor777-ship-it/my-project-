@@ -159,6 +159,35 @@ def cmd_digest(args) -> int:
     return 0
 
 
+def cmd_eval(args) -> int:
+    """Прогон по размеченному набору: показывает, стало лучше или хуже."""
+    from pathlib import Path
+
+    from app import evaluation
+
+    services = build_services()
+    with session_scope() as session:
+        report = evaluation.run_eval(
+            session,
+            services.llm,
+            services.brand,
+            args.model or services.settings.model_analysis,
+            path=Path(args.path),
+            limit=args.limit,
+        )
+    if args.json:
+        _print(report.as_dict())
+    else:
+        print(evaluation.render(report))
+    if args.min_accuracy and report.overall < args.min_accuracy:
+        print(
+            f"\nТочность {report.overall:.1%} ниже порога {args.min_accuracy:.1%}",
+            file=sys.stderr,
+        )
+        return 1
+    return 0
+
+
 def cmd_examples(_args) -> int:
     """Выгружает опубликованные ответы — материал для few-shot примеров."""
     from app import moderation
@@ -221,6 +250,16 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("stats", help="агрегаты по отзывам").set_defaults(func=cmd_stats)
     sub.add_parser("alerts", help="проверить правила алертов").set_defaults(func=cmd_alerts)
     sub.add_parser("examples", help="выгрузить опубликованные ответы").set_defaults(func=cmd_examples)
+
+    p_eval = sub.add_parser("eval", help="проверить качество классификации на разметке")
+    p_eval.add_argument("--path", default="fixtures/eval_set.json")
+    p_eval.add_argument("--model", default=None, help="переопределить модель анализа")
+    p_eval.add_argument("--limit", type=int, default=None)
+    p_eval.add_argument("--json", action="store_true")
+    p_eval.add_argument(
+        "--min-accuracy", type=float, default=None, help="код возврата 1, если точность ниже"
+    )
+    p_eval.set_defaults(func=cmd_eval)
 
     p_digest = sub.add_parser("digest", help="недельная сводка по негативу")
     p_digest.add_argument("--days", type=int, default=7)

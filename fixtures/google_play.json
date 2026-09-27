@@ -7,7 +7,7 @@
     "locale": "ru",
     "app_version": "4.2.0",
     "device": "SM-G991B",
-    "created_at": "2026-09-25T09:30:00+00:00"
+    "created_at": "-3h"
   },
   {
     "id": "gp-2002",
@@ -17,7 +17,7 @@
     "locale": "ru",
     "app_version": "4.2.0",
     "device": "Pixel 7",
-    "created_at": "2026-09-25T14:10:00+00:00"
+    "created_at": "-46h"
   },
   {
     "id": "gp-2003",
@@ -27,7 +27,7 @@
     "locale": "ru",
     "app_version": "4.2.0",
     "device": "Redmi Note 11",
-    "created_at": "2026-09-26T06:05:00+00:00"
+    "created_at": "-30h"
   },
   {
     "id": "gp-2004",
@@ -37,6 +37,216 @@
     "locale": "en",
     "app_version": "4.1.8",
     "device": "OnePlus 9",
-    "created_at": "2026-09-26T16:40:00+00:00"
+    "created_at": "-19h"
+  },
+  {
+    "id": "gp-2005",
+    "rating": 1,
+    "body": "Краш при открытии ленты на 4.2.0. Xiaomi 13, Android 14. Ничего не работает.",
+    "author": "Ruslan",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Xiaomi 13",
+    "created_at": "-3h"
+  },
+  {
+    "id": "gp-2006",
+    "rating": 1,
+    "body": "Вылетает сразу после сплэш-экрана. Realme, версия 4.2.0. Переустановка не помогла.",
+    "author": "Тимур",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Realme 9",
+    "created_at": "-2h"
+  },
+  {
+    "id": "gp-2007",
+    "rating": 1,
+    "body": "Списали 899 рублей после отмены подписки. Верните деньги.",
+    "author": "Дарья",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Galaxy A52",
+    "created_at": "-6h"
+  },
+  {
+    "id": "gp-2008",
+    "rating": 2,
+    "body": "Реклама стала невыносимой: видео на 30 секунд без кнопки закрытия.",
+    "author": "Кирилл",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Pixel 6a",
+    "created_at": "-42h"
+  },
+  {
+    "id": "gp-2009",
+    "rating": 1,
+    "body": "Не могу войти, гугл-аккаунт не подключается, пишет ошибку 400.",
+    "author": "Света",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Honor 50",
+    "created_at": "-16h"
+  },
+  {
+    "id": "gp-2010",
+    "rating": 1,
+    "body": "Синхронизация затёрла операции за август. Данных нет ни на телефоне, ни в облаке.",
+    "author": "Максим",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Galaxy S22",
+    "created_at": "-14h"
+  },
+  {
+    "id": "gp-2011",
+    "rating": 1,
+    "body": "Зачем вам доступ к контактам и геолокации для учёта расходов? Удаляю.",
+    "author": "Приватность",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Pixel 8",
+    "created_at": "-24h"
+  },
+  {
+    "id": "gp-2012",
+    "rating": 1,
+    "body": "Буду жаловаться в суд, вы списываете деньги без согласия. Мой телефон +7 999 123-45-67, перезвоните.",
+    "author": "Н.П.",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Redmi 10",
+    "created_at": "-6h"
+  },
+  {
+    "id": "gp-2013",
+    "rating": 4,
+    "body": "Хорошее приложение, но очень нужен виджет и оффлайн-режим.",
+    "author": "Артём",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Nothing Phone 2",
+    "created_at": "-75h"
+  },
+  {
+    "id": "gp-2014",
+    "rating": 2,
+    "body": "Уведомления приходят по пять раз об одном и том же. Настройки не помогают.",
+    "author": "Лена",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Galaxy A34",
+    "created_at": "-52h"
+  },
+  {
+    "id": "gp-2015",
+    "rating": 1,
+    "body": "Поддержка молчит десять дней. Тикет #48213, ни одного ответа.",
+    "author": "Виталий",
+    "locale": "ru",
+    "app_version": "4.1.8",
+    "device": "Poco X5",
+    "created_at": "-65h"
+  },
+  {
+    "id": "gp-2016",
+    "rating": 2,
+    "body": "Тормозит на слабых телефонах, список за год открывается секунд десять.",
+    "author": "Юрий",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Galaxy A13",
+    "created_at": "-93h"
+  },
+  {
+    "id": "gp-2017",
+    "rating": 1,
+    "body": "La aplicación se cierra sola al abrir la lista. Xiaomi, versión 4.2.0. Antes funcionaba bien.",
+    "author": "Carlos",
+    "locale": "es",
+    "app_version": "4.2.0",
+    "device": "Redmi Note 12",
+    "created_at": "-2h"
+  },
+  {
+    "id": "gp-2018",
+    "rating": 2,
+    "body": "Die App stürzt beim Export ab und die Werbung ist zu aufdringlich.",
+    "author": "Stefan",
+    "locale": "de",
+    "app_version": "4.2.0",
+    "device": "Galaxy S23",
+    "created_at": "-23h"
+  },
+  {
+    "id": "gp-2019",
+    "rating": 1,
+    "body": "Abonelik iptal edilemiyor, para çekilmeye devam ediyor. Lütfen düzeltin.",
+    "author": "Emre",
+    "locale": "tr",
+    "app_version": "4.2.0",
+    "device": "Galaxy M23",
+    "created_at": "-18h"
+  },
+  {
+    "id": "gp-2020",
+    "rating": 1,
+    "body": "Péssimo. Travou e perdi todos os meus lançamentos do mês.",
+    "author": "Lucas",
+    "locale": "pt",
+    "app_version": "4.2.0",
+    "device": "Moto G84",
+    "created_at": "-27h"
+  },
+  {
+    "id": "gp-2021",
+    "rating": 1,
+    "body": "Плохо",
+    "author": "Аноним",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Galaxy A03",
+    "created_at": "-38h"
+  },
+  {
+    "id": "gp-2022",
+    "rating": 1,
+    "body": "Заработок в интернете! Пиши в вотсап, расскажу схему без вложений.",
+    "author": "spam",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "unknown",
+    "created_at": "-34h"
+  },
+  {
+    "id": "gp-2023",
+    "rating": 3,
+    "body": "Нет поддержки TalkBack, кнопки не озвучиваются, пользоваться незрячему невозможно.",
+    "author": "Дмитрий С.",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Pixel 7a",
+    "created_at": "-72h"
+  },
+  {
+    "id": "gp-2024",
+    "rating": 2,
+    "body": "Очень подробно: при импорте выписки из банка приложение дублирует операции, если файл загрузить дважды. Дубликаты нельзя удалить пачкой, только по одной, а их триста. Плюс после импорта категории сбрасываются на «Прочее». Версия 4.2.0, Samsung Galaxy S21, Android 14. На 4.1.8 импорт работал корректно, проверял на том же файле.",
+    "author": "Евгений Р.",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "SM-G991B",
+    "created_at": "-2h"
+  },
+  {
+    "id": "gp-2025",
+    "rating": 5,
+    "body": "Топ 👍",
+    "author": "Аня",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "device": "Pixel 8",
+    "created_at": "-98h"
   }
 ]

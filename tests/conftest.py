@@ -119,7 +119,7 @@ def fixtures_dir(tmp_path: Path) -> Path:
             "territory": "RUS",
             "locale": "ru",
             "app_version": "4.2.0",
-            "created_at": "2026-09-25T08:45:00+00:00",
+            "created_at": "-4h",
         },
         {
             "id": "as-2",
@@ -130,7 +130,7 @@ def fixtures_dir(tmp_path: Path) -> Path:
             "territory": "RUS",
             "locale": "ru",
             "app_version": "4.2.0",
-            "created_at": "2026-09-24T10:00:00+00:00",
+            "created_at": "-50h",
         },
         {
             "id": "as-3",
@@ -141,7 +141,7 @@ def fixtures_dir(tmp_path: Path) -> Path:
             "territory": "RUS",
             "locale": "ru",
             "app_version": "4.2.0",
-            "created_at": "2026-09-26T12:00:00+00:00",
+            "created_at": "-2h",
         },
     ]
     play = [
@@ -153,7 +153,7 @@ def fixtures_dir(tmp_path: Path) -> Path:
             "locale": "ru",
             "app_version": "4.2.0",
             "device": "Redmi",
-            "created_at": "2026-09-26T06:05:00+00:00",
+            "created_at": "-6h",
         }
     ]
     (tmp_path / "app_store.json").write_text(json.dumps(apple, ensure_ascii=False), encoding="utf-8")
