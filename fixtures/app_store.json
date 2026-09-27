@@ -1,0 +1,57 @@
+[
+  {
+    "id": "as-1001",
+    "rating": 5,
+    "title": "Отличное приложение",
+    "body": "Пользуюсь полгода, всё работает быстро. Спасибо за тёмную тему!",
+    "author": "Ирина К.",
+    "territory": "RUS",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "created_at": "2026-09-24T10:12:00+00:00"
+  },
+  {
+    "id": "as-1002",
+    "rating": 1,
+    "title": "Постоянно вылетает",
+    "body": "После обновления до 4.2.0 приложение крашится при открытии ленты. iPhone 13, iOS 18. Деньги за подписку списали, а пользоваться невозможно.",
+    "author": "Dmitry",
+    "territory": "RUS",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "created_at": "2026-09-25T08:45:00+00:00"
+  },
+  {
+    "id": "as-1003",
+    "rating": 2,
+    "title": "Can't cancel subscription",
+    "body": "I have been charged twice this month and there is no way to cancel from the app. Support has not answered my email for 5 days. My email is user@example.com, please fix this.",
+    "author": "Mark T.",
+    "territory": "USA",
+    "locale": "en",
+    "app_version": "4.1.8",
+    "created_at": "2026-09-25T19:03:00+00:00"
+  },
+  {
+    "id": "as-1004",
+    "rating": 4,
+    "title": "Хорошо, но не хватает экспорта",
+    "body": "В целом нравится, но очень нужен экспорт в CSV. Без него приходится копировать вручную.",
+    "author": "Сергей",
+    "territory": "RUS",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "created_at": "2026-09-26T07:20:00+00:00"
+  },
+  {
+    "id": "as-1005",
+    "rating": 1,
+    "title": "Обман и утечка данных",
+    "body": "Приложение сливает мои контакты третьим лицам, я обратился к юристу и буду подавать в суд. Требую удалить мой аккаунт немедленно.",
+    "author": "Аноним",
+    "territory": "RUS",
+    "locale": "ru",
+    "app_version": "4.2.0",
+    "created_at": "2026-09-26T12:00:00+00:00"
+  }
+]

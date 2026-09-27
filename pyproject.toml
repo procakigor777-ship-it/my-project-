@@ -1,0 +1,35 @@
+[project]
+name = "review-autoreply"
+version = "0.1.0"
+description = "AI-ассистент для ответов на отзывы в App Store и Google Play с обязательной модерацией"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=1.0.0",
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.30",
+    "sqlalchemy>=2.0",
+    "pydantic>=2.7",
+    "pydantic-settings>=2.3",
+    "httpx2>=0.1",
+    "pyjwt[crypto]>=2.8",
+    "google-auth[requests]>=2.30",
+    "apscheduler>=3.10",
+    "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23"]
+postgres = ["psycopg[binary]>=3.1"]
+
+[project.scripts]
+reviews = "app.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

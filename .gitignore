@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.env
+*.db
+*.sqlite3
+.pytest_cache/
+*.p8
+*service-account*.json
+.runtime/
+secrets/
+brand.json

@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Модерация ответов</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #fff; --ink: #14161a; --muted: #6b7280;
+    --line: #e4e7eb; --accent: #2563eb; --ok: #15803d; --warn: #b45309; --bad: #b91c1c;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.5 -apple-system, "Segoe UI", Roboto, sans-serif;
+         background: var(--bg); color: var(--ink); }
+  header { background: var(--card); border-bottom: 1px solid var(--line);
+           padding: 12px 20px; display: flex; gap: 16px; align-items: center; position: sticky; top: 0; z-index: 5; }
+  header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  nav button { background: none; border: none; padding: 6px 10px; cursor: pointer;
+               border-radius: 6px; font: inherit; color: var(--muted); }
+  nav button.active { background: #eef2ff; color: var(--accent); font-weight: 600; }
+  main { max-width: 900px; margin: 20px auto; padding: 0 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+          padding: 16px; margin-bottom: 14px; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; background: #eef2f7; color: var(--muted); }
+  .sev-5, .sev-4 { background: #fee2e2; color: var(--bad); font-weight: 600; }
+  .sev-3 { background: #ffedd5; color: var(--warn); }
+  .risk { background: #fee2e2; color: var(--bad); font-weight: 600; }
+  .stars { color: #b45309; font-weight: 600; }
+  .review-body { white-space: pre-wrap; margin: 10px 0; }
+  .meta { color: var(--muted); font-size: 13px; }
+  textarea { width: 100%; min-height: 110px; padding: 10px; border: 1px solid var(--line);
+             border-radius: 8px; font: inherit; resize: vertical; }
+  .counter { font-size: 13px; color: var(--muted); }
+  .counter.over { color: var(--bad); font-weight: 600; }
+  .actions { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+  button.primary { background: var(--accent); color: #fff; border: none; padding: 8px 16px;
+                   border-radius: 8px; cursor: pointer; font: inherit; }
+  button.ghost { background: none; border: 1px solid var(--line); padding: 8px 16px;
+                 border-radius: 8px; cursor: pointer; font: inherit; }
+  .empty { text-align: center; color: var(--muted); padding: 40px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+  th { color: var(--muted); font-weight: 500; }
+  .alert { border-left: 3px solid var(--warn); padding-left: 12px; margin-bottom: 10px; }
+  .alert.critical { border-color: var(--bad); }
+  .hint { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+           background: #14161a; color: #fff; padding: 10px 18px; border-radius: 8px;
+           opacity: 0; transition: opacity .2s; }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Модерация ответов на отзывы</h1>
+  <nav>
+    <button id="tab-queue" class="active" onclick="showTab('queue')">Очередь</button>
+    <button id="tab-stats" onclick="showTab('stats')">Аналитика</button>
+  </nav>
+  <span style="margin-left:auto" class="meta">
+    модератор: <input id="moderator" value="" placeholder="ваше имя" style="border:1px solid var(--line);border-radius:6px;padding:4px 8px;font:inherit;width:120px">
+  </span>
+</header>
+
+<main>
+  <section id="view-queue">
+    <p class="hint">Очередь отсортирована по серьёзности, а не по времени. Клавиши: <b>A</b> — подтвердить верхнюю карточку, <b>R</b> — отклонить.</p>
+    <div id="queue"></div>
+  </section>
+  <section id="view-stats" hidden>
+    <div id="stats"></div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const STORE_NAMES = { app_store: "App Store", google_play: "Google Play" };
+let queue = [];
+
+function toast(text) {
+  const el = document.getElementById("toast");
+  el.textContent = text;
+  el.classList.add("show");
+  setTimeout(() => el.classList.remove("show"), 2200);
+}
+
+function moderator() {
+  const name = document.getElementById("moderator").value.trim();
+  if (name) localStorage.setItem("moderator", name);
+  return name || "unknown";
+}
+
+async function api(path, options = {}) {
+  const res = await fetch(path, {
+    ...options,
+    headers: { "Content-Type": "application/json", "X-Moderator": moderator(), ...(options.headers || {}) },
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(body.detail || "Ошибка запроса");
+  }
+  return res.json();
+}
+
+function esc(s) {
+  return (s || "").replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
+}
+
+function card(item) {
+  const a = item.analysis || {};
+  const topics = (a.topics || []).map(t => `<span class="badge">${esc(t)}</span>`).join(" ");
+  const risks = (a.risk_flags || []).map(f => `<span class="badge risk">${esc(f)}</span>`).join(" ");
+  const needsHuman = item.status === "needs_human";
+  const draft = item.draft_text || "";
+
+  return `<div class="card" data-reply="${item.reply_id}">
+    <div class="row">
+      <span class="badge">${STORE_NAMES[item.review.store] || item.review.store}</span>
+      <span class="stars">${"★".repeat(item.review.rating)}${"☆".repeat(5 - item.review.rating)}</span>
+      ${a.severity ? `<span class="badge sev-${a.severity}">severity ${a.severity}</span>` : ""}
+      ${topics} ${risks}
+      ${a.contains_pii ? '<span class="badge risk">PII</span>' : ""}
+      ${needsHuman ? '<span class="badge risk">нужен человек</span>' : ""}
+      <span class="meta" style="margin-left:auto">${item.review.app_version || ""} ${item.review.locale || ""}</span>
+    </div>
+    ${item.review.title ? `<div style="font-weight:600;margin-top:10px">${esc(item.review.title)}</div>` : ""}
+    <div class="review-body">${esc(item.review.body)}</div>
+    <div class="meta">${esc(item.review.author || "аноним")} · ${(item.review.created_at || "").slice(0, 16).replace("T", " ")}
+      ${a.summary ? " · " + esc(a.summary) : ""}</div>
+    ${item.note ? `<div class="meta" style="color:var(--warn);margin-top:6px">${esc(item.note)}</div>` : ""}
+    <div style="margin-top:12px">
+      <textarea id="text-${item.reply_id}" oninput="updateCounter(${item.reply_id}, ${item.char_limit || 1000})"
+        placeholder="${needsHuman ? "Черновик не генерировался — напишите ответ вручную" : ""}">${esc(draft)}</textarea>
+      <div class="row" style="margin-top:6px">
+        <span class="counter" id="counter-${item.reply_id}"></span>
+        <span class="meta">лимит ${item.char_limit || "—"} символов</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="primary" onclick="approve(${item.reply_id})">Подтвердить</button>
+      <button class="ghost" onclick="reject(${item.reply_id})">Отклонить</button>
+    </div>
+  </div>`;
+}
+
+function updateCounter(id, limit) {
+  const text = document.getElementById(`text-${id}`).value;
+  const el = document.getElementById(`counter-${id}`);
+  el.textContent = `${text.length} / ${limit}`;
+  el.classList.toggle("over", text.length > limit);
+}
+
+async function loadQueue() {
+  const data = await api("/api/queue");
+  queue = data.items;
+  const container = document.getElementById("queue");
+  container.innerHTML = queue.length
+    ? queue.map(card).join("")
+    : '<div class="empty">Очередь пуста — все отзывы обработаны.</div>';
+  queue.forEach(i => updateCounter(i.reply_id, i.char_limit || 1000));
+}
+
+async function approve(id) {
+  const text = document.getElementById(`text-${id}`).value;
+  try {
+    const res = await api(`/api/replies/${id}/approve`, { method: "POST", body: JSON.stringify({ text }) });
+    toast(res.edited ? "Подтверждено с правками" : "Подтверждено");
+    await loadQueue();
+  } catch (e) { toast(e.message); }
+}
+
+async function reject(id) {
+  const reason = prompt("Причина отклонения (она попадёт в статистику и поможет починить промпт):");
+  if (!reason) return;
+  try {
+    await api(`/api/replies/${id}/reject`, { method: "POST", body: JSON.stringify({ reason }) });
+    toast("Отклонено");
+    await loadQueue();
+  } catch (e) { toast(e.message); }
+}
+
+async function loadStats() {
+  const [d, al, rr] = await Promise.all([
+    api("/api/dashboard"), api("/api/alerts"), api("/api/reject-reasons"),
+  ]);
+  const alerts = al.alerts.length
+    ? al.alerts.map(a => `<div class="alert ${a.level}"><b>${esc(a.title)}</b><div class="meta">${esc(a.detail)}</div></div>`).join("")
+    : '<div class="meta">Активных алертов нет.</div>';
+  const versions = d.versions.map(v => `<tr><td>${esc(v.app_version)}</td><td>${v.reviews}</td>
+      <td>${v.negative}</td><td>${(v.negative_share * 100).toFixed(0)}%</td><td>${v.average_rating}</td></tr>`).join("");
+  const topics = d.topics.map(([t, c]) => `<tr><td>${esc(t)}</td><td>${c}</td></tr>`).join("");
+  const reasons = rr.reasons.length
+    ? rr.reasons.map(r => `<tr><td>${esc(r.reason)}</td><td>${r.count}</td></tr>`).join("")
+    : '<tr><td class="meta" colspan="2">Пока нет отклонённых черновиков.</td></tr>';
+  const delta = d.delta_negative_share;
+
+  document.getElementById("stats").innerHTML = `
+    <div class="card"><h3 style="margin-top:0">Алерты</h3>${alerts}</div>
+    <div class="card">
+      <h3 style="margin-top:0">Неделя</h3>
+      <div class="row">
+        <span class="badge">отзывов: ${d.week.reviews}</span>
+        <span class="badge">негатив: ${d.week.negative} (${(d.week.negative_share * 100).toFixed(0)}%)</span>
+        <span class="badge">средняя оценка: ${d.week.average_rating}</span>
+        <span class="badge ${delta > 0 ? "sev-4" : ""}">динамика негатива: ${delta > 0 ? "+" : ""}${(delta * 100).toFixed(0)} п.п.</span>
+      </div>
+    </div>
+    <div class="card"><h3 style="margin-top:0">По версиям (14 дней)</h3>
+      <table><tr><th>Версия</th><th>Отзывов</th><th>Негатив</th><th>Доля</th><th>Средняя</th></tr>${versions}</table></div>
+    <div class="card"><h3 style="margin-top:0">Темы негатива (7 дней)</h3>
+      <table><tr><th>Тема</th><th>Отзывов</th></tr>${topics}</table></div>
+    <div class="card"><h3 style="margin-top:0">Качество генерации</h3>
+      <div class="row">
+        <span class="badge">промодерировано: ${d.moderation.moderated}</span>
+        <span class="badge">без правок: ${d.moderation.approved_clean}</span>
+        <span class="badge">с правками: ${d.moderation.edited}</span>
+        <span class="badge">отклонено: ${d.moderation.rejected}</span>
+        <span class="badge">доля чистых: ${(d.moderation.clean_rate * 100).toFixed(0)}%</span>
+      </div>
+      <h4>Причины отклонения</h4>
+      <table><tr><th>Причина</th><th>Раз</th></tr>${reasons}</table></div>`;
+}
+
+function showTab(name) {
+  document.getElementById("view-queue").hidden = name !== "queue";
+  document.getElementById("view-stats").hidden = name !== "stats";
+  document.getElementById("tab-queue").classList.toggle("active", name === "queue");
+  document.getElementById("tab-stats").classList.toggle("active", name === "stats");
+  if (name === "stats") loadStats();
+}
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA" || e.target.tagName === "INPUT") return;
+  if (!queue.length) return;
+  if (e.key === "a") approve(queue[0].reply_id);
+  if (e.key === "r") reject(queue[0].reply_id);
+});
+
+document.getElementById("moderator").value = localStorage.getItem("moderator") || "";
+loadQueue().catch(e => toast(e.message));
+</script>
+</body>
+</html>
